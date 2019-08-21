@@ -1,0 +1,19 @@
+package com.goog.crowed.api;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.goog.crowed.entity.MemberPO;
+import com.goog.crowed.entity.ResultEntity;
+
+@FeignClient(value="database-provider")
+public interface DataBaseOperationRemoteService {
+
+	@RequestMapping("/get/login/acct/count")
+	ResultEntity<Integer> retrieveLoginAcctCount(@RequestParam("loginAcct") String loginAcct);
+	
+	@RequestMapping("/save/member")
+	ResultEntity<String> saveMember(@RequestBody MemberPO memberPO); // 传输 对象数据使用 @RequestBody
+}

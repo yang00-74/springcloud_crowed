@@ -1,0 +1,16 @@
+server:
+  port: 2000
+spring:
+  datasource:    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/distributed-crowd
+    driver-class-name: com.mysql.jdbc.Driver
+  application:    name: database-provider #当前服务名称，注册服务信息
+mybatis:  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka/
+  instance:
+      prefer-ip-address: true
