@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.goog.crowed.api.DataBaseOperationRemoteService;
 import com.goog.crowed.api.RedisOperationRemoteService;
-import com.goog.crowed.entity.MemberPO;
-import com.goog.crowed.entity.MemberVO;
 import com.goog.crowed.entity.ResultEntity;
+import com.goog.crowed.entity.po.MemberPO;
+import com.goog.crowed.entity.vo.MemberVO;
 import com.goog.crowed.utils.Constant;
 import com.goog.crowed.utils.CrowdUtils;
 

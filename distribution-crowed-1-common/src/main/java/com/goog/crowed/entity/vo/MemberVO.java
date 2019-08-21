@@ -1,4 +1,4 @@
-package com.goog.crowed.entity;
+package com.goog.crowed.entity.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

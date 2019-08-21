@@ -4,8 +4,8 @@ package com.goog.crowed.mapper;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-import com.goog.crowed.entity.MemberPO;
-import com.goog.crowed.entity.MemberPOExample;
+import com.goog.crowed.entity.po.MemberPO;
+import com.goog.crowed.entity.po.MemberPOExample;
 
 public interface MemberPOMapper {
     int countByExample(MemberPOExample example);

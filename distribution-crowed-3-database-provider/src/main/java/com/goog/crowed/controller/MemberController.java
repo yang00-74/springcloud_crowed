@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.goog.crowed.entity.MemberPO;
 import com.goog.crowed.entity.ResultEntity;
+import com.goog.crowed.entity.po.MemberPO;
 import com.goog.crowed.service.api.MemberService;
 import com.goog.crowed.utils.Constant;
 import com.goog.crowed.utils.CrowdUtils;
@@ -18,6 +18,18 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 
+	@RequestMapping("/get/member/by/login/acct")
+	public ResultEntity<MemberPO> retrieveMemberByLoginAcctCount(
+			@RequestParam("loginAcct") String loginAcct){
+		try {
+			MemberPO memberPO = memberService.getMemberByLoginAcct(loginAcct);
+			return ResultEntity.successWithData(memberPO);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResultEntity.failed(e.getMessage());
+		}
+	}
+	
 	@RequestMapping("/get/login/acct/count")
 	public ResultEntity<Integer> retrieveLoginAcctCount(@RequestParam("loginAcct") String loginAcct) {
 

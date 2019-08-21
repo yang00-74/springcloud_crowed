@@ -18,5 +18,6 @@ public class Constant {
 	public static final String MESSAGE_RANDOM_CODE_NOT_MATCHED = "Random code not matched!";
 	public static final String MESSAGE_RANDOM_CODE_NOT_EXISTS ="Random code not exist or already expire";
 	public static final String MESSAGE_LOGIN_ACCT_ALREADY_EXISTS = "Login account already exist!";
+	public static final String MEMBER_SIGNED_TOKEN_PREFIX = "SIGNED_MEMBER_";
 
 }

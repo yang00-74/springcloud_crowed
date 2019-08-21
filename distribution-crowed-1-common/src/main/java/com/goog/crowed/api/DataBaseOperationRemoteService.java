@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.goog.crowed.entity.MemberPO;
 import com.goog.crowed.entity.ResultEntity;
+import com.goog.crowed.entity.po.MemberPO;
 
 @FeignClient(value="database-provider")
 public interface DataBaseOperationRemoteService {
@@ -16,4 +16,7 @@ public interface DataBaseOperationRemoteService {
 	
 	@RequestMapping("/save/member")
 	ResultEntity<String> saveMember(@RequestBody MemberPO memberPO); // 传输 对象数据使用 @RequestBody
+	
+	@RequestMapping("/get/member/by/login/acct")
+	ResultEntity<MemberPO> retrieveMemberByLoginAcctCount(@RequestParam("loginAcct") String loginAcct);
 }

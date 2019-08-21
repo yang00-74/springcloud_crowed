@@ -1,4 +1,4 @@
-package com.goog.crowed.entity;
+package com.goog.crowed.entity.po;
 
 import java.util.ArrayList;
 import java.util.List;
