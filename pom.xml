@@ -292,5 +292,6 @@
 		<module>distribution-crowed-3-database-provider</module>
 		<module>distribution-crowed-4-redis-provider</module>
 		<module>distribution-crowed-5-member-manager</module>
+		<module>distribution-crowed-6-project-manager</module>
 	</modules>
 </project>
