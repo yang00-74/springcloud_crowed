@@ -109,7 +109,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.goog.crowed.entity.po.ProjectPO" >
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.goog.crowed.entity.po.ProjectPO" >
     insert into t_project (id, project_name, project_description, 
       money, day, status, 
       deploydate, supportmoney, supporter, 

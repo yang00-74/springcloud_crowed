@@ -7,7 +7,7 @@ import com.goog.crowed.entity.po.MemberPO;
 
 public class CrowdUtils {
 
-	public static boolean isEmpty(String s) {
+	public static <T> boolean isEmpty(T s) {
 		if (null != s && !("").equals(s)) {
 			return false;
 		}
@@ -26,7 +26,7 @@ public class CrowdUtils {
 
 	}
 
-	public static boolean isCollectionEmpty(List<MemberPO> list) {
+	public static <T> boolean isCollectionEmpty(List<T> list) {
 		if (null == list || list.size()==0) {
 			return true;
 		}
@@ -34,7 +34,7 @@ public class CrowdUtils {
 	}
 	
 	public static String createToken() {
-		return Constant.MEMBER_SIGNED_TOKEN_PREFIX + UUID.randomUUID().toString().replaceAll("-", "");
+		return Constant.REDIS_MEMBER_SIGNED_TOKEN_PREFIX + UUID.randomUUID().toString().replaceAll("-", "");
 	}
 
 }

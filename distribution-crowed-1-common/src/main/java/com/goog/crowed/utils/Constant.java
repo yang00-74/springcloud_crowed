@@ -8,6 +8,8 @@ public class Constant {
 	public static final String NO_DATA = "NO_DATA";
 
 	public static final String REDIS_RANDOM_CODE_PREFIX = "RANDOM_CODE_";
+	public static final String REDIS_MEMBER_SIGNED_TOKEN_PREFIX = "SIGNED_MEMBER_";
+	public static final String REDIS_PROJECT_TEMP_TOKEN_PREFIX = "PROJECT_TEMP_TOKEN_";
 
 	public static final String MESSAGE_LOGIN_FAILED = "Account or password error!";
 	public static final String MESSAGE_REDIS_KEY_OR_VALUE_INVALID = "Redis key or value invalid!";
@@ -18,6 +20,6 @@ public class Constant {
 	public static final String MESSAGE_RANDOM_CODE_NOT_MATCHED = "Random code not matched!";
 	public static final String MESSAGE_RANDOM_CODE_NOT_EXISTS ="Random code not exist or already expire";
 	public static final String MESSAGE_LOGIN_ACCT_ALREADY_EXISTS = "Login account already exist!";
-	public static final String MEMBER_SIGNED_TOKEN_PREFIX = "SIGNED_MEMBER_";
+	public static final String MESSAGE_PLEASE_LOGIN ="Please login first!";
 
 }
