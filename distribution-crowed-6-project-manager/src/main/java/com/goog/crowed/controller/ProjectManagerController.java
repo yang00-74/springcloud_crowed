@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import com.goog.crowed.api.RabbitProducerRemoteService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,6 +43,14 @@ public class ProjectManagerController {
 	private RedisOperationRemoteService redisRemoteService;
 	@Autowired
 	private DataBaseOperationRemoteService dataBaseRemoteService;
+	@Autowired
+	private RabbitProducerRemoteService rabbitRemoteService;
+
+	@RequestMapping("/project/manager/rabbit")
+	public ResultEntity<String> rabbit(@RequestParam("type") String type, @RequestParam("message") String message) {
+		rabbitRemoteService.sendMessage(type, message);
+		return ResultEntity.successNoData();
+	}
 
 	@RequestMapping("/project/manager/save/all/information")
 	public ResultEntity<String> saveAllInformation(@RequestParam("memberSignToken") String memberSignToken,

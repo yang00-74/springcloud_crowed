@@ -22,4 +22,7 @@ public class Constant {
 	public static final String MESSAGE_LOGIN_ACCT_ALREADY_EXISTS = "Login account already exist!";
 	public static final String MESSAGE_PLEASE_LOGIN ="Please login first!";
 
+    public static final String MESSAGE_RABBITMQ = "rabbitmq.";
+	public static final String MESSAGE_RABBITMQ_SAVE = "rabbitmq.save";
+	public static final String MESSAGE_RABBITMQ_MESSAGE_INVALID = "RabbitMQ message invalid!";
 }

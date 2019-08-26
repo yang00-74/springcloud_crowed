@@ -52,7 +52,7 @@ public class RedisOperationController {
 		return ResultEntity.successNoData();
 	}
 
-	@RequestMapping("redis/get/string/value/by/key")
+	@RequestMapping("/redis/get/string/value/by/key")
 	ResultEntity<String> retrieveStringValueByStringKey(@RequestParam("normalKey") String normalKey) {
 		if (CrowdUtils.isEmpty(normalKey)) {
 			return ResultEntity.failed(Constant.MESSAGE_REDIS_KEY_OR_VALUE_INVALID);

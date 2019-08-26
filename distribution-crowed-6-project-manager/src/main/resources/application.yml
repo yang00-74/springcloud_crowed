@@ -3,6 +3,13 @@ server:
 spring:
   application:
     name: project-manager #当前服务名称，注册服务信息
+  rabbitmq:
+    host: 127.0.0.1
+    virtual-host: /yang
+    username: root
+    password: root
+    template:
+      exchange: RABBITMQ.YANG.EXCHANGE
 eureka:
   client:
     service-url:

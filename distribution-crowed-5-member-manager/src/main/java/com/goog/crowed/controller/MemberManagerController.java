@@ -1,17 +1,5 @@
 package com.goog.crowed.controller;
 
-import java.util.Objects;
-
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.goog.crowed.api.DataBaseOperationRemoteService;
 import com.goog.crowed.api.RedisOperationRemoteService;
 import com.goog.crowed.entity.ResultEntity;
@@ -20,6 +8,16 @@ import com.goog.crowed.entity.vo.MemberSignSuccessVO;
 import com.goog.crowed.entity.vo.MemberVO;
 import com.goog.crowed.utils.Constant;
 import com.goog.crowed.utils.CrowdUtils;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Objects;
 
 @RestController
 public class MemberManagerController {
@@ -38,12 +36,12 @@ public class MemberManagerController {
 	@Autowired
 	private DataBaseOperationRemoteService databaseRemoteService;
 	
-	@RequestMapping("member/manager/loginout")
+	@RequestMapping("/member/manager/loginout")
 	public ResultEntity<String> loginout(@RequestParam("token") String token) {
 		return redisRemoteService.removeByKey(token);
 	}
 
-	@RequestMapping("member/manager/login")
+	@RequestMapping("/member/manager/login")
 	public ResultEntity<MemberSignSuccessVO> login(@RequestParam("loginAcct") String loginAcct,
 			@RequestParam("userPswd") String userPswd) {
 		// 1. 检查账号是否存在
@@ -77,7 +75,7 @@ public class MemberManagerController {
 
 	}
 
-	@RequestMapping("member/manager/register")
+	@RequestMapping("/member/manager/register")
 	public ResultEntity<String> register(@RequestBody MemberVO memberVO) {
 		// 1. 检查验证码
 		String code = memberVO.getRandomCode();
@@ -134,7 +132,7 @@ public class MemberManagerController {
 		return databaseRemoteService.saveMember(memberPO);
 	}
 
-	@RequestMapping("member/manager/send/code")
+	@RequestMapping("/member/manager/send/code")
 	public ResultEntity<String> sendCode(@RequestParam("phoneNum") String phoneNum) {
 		if (CrowdUtils.isEmpty(phoneNum)) {
 			return ResultEntity.failed(Constant.MESSAGE_PHONE_NUM_INVALID);

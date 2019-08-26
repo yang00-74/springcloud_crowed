@@ -1,8 +1,10 @@
 server:
   port: 3000
 spring:
-  application:    name: redis-provider #当前服务名称，注册服务信息
-  redis:    host: 127.0.0.1 
+  application:
+    name: redis-provider #当前服务名称，注册服务信息
+  redis:
+    host: 127.0.0.1 
 eureka:
   client:
     service-url:
